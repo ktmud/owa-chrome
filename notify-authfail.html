@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="notify.css" />
-<script src="jquery-1.4.2.min.js"></script>
+<script src="jquery-1.4.4.min.js"></script>
 <script src="common.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
    // <p>可能是你提供的域帐号和密码有误，请<a href="javascript:;">重新设置</a>。
 
     $('body').ready(function(){
-        $('body').html(['<h1><img src="grey.png" />', msgTitle, '</h1><p>', msgBody, '</p>'].join(''));
+        $('body').html(['<h1><img src="gray.png" />', msgTitle, '</h1><p>', msgBody, '</p>'].join(''));
 
         $('a').add('h1').click(function(){
             TABS.create({url:'options.html?focus=username', selected:true});

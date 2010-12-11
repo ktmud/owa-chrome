@@ -3,6 +3,11 @@ body {
     margin: 0;
     font: 13px Verdana, Geneva, sans-serif;
 }
+
+img {
+    padding: 3px;
+}
+
 h1 { 
     text-align: center;
     font: 400 32px "Candara","Microsoft Yahei","Verdana","黑体",sans-serif;

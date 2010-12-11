@@ -1,10 +1,16 @@
 {
   "name": "__MSG_extName__",
-  "version": "0.1.1.9",
+  "version": "0.1.2.1",
   "description": "__MSG_extDescription__",
-  "icons": {"32": "yellow.png", "48": "48.png", "64": "64.png", "128": "128.png"},
+  "icons": {
+      "16": "owa-companion-16.png",
+      "32": "yellow.png",
+      "48": "owa-companion-48.png", 
+      "64": "owa-companion-64.png", 
+      "128": "owa-companion.png"
+  },
   "browser_action": {
-    "default_icon": "grey.png",
+    "default_icon": "gray.png",
     "default_title": "__MSG_ba_tip_Default__"
   },
   "options_page": "options.html",

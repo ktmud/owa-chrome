@@ -22,7 +22,7 @@ var occLoader = function() {
 
             //登录判定
             $.ajax({
-                url: URL,
+                url: HOME_URL,
                 success: function(res) {
                     //如果登录成功，应该是在开始页
                     if (res.indexOf('StartPage') >= 0) {
@@ -57,7 +57,6 @@ var occLoader = function() {
     }
 
     function login(usr, pwd, notiNewMail, openHome) {
-        if (!usr || !pwd) notify('notify-authfail.html');
         var data = {
             destination: HOME_URL,
             flags: '4',
@@ -125,14 +124,13 @@ var occLoader = function() {
                 theTime = evtime.match(/(\d{2})-(\d{2})-(\d{4}) (\d{2}):(\d{2}):(\d{2})/);
 
                 now = new Date();
-                theFuture = new Date(Data.UTC(theTime[3], theTime[1], theTime[2], theTime[4], theTime[5], theTime[6]); 
+                theFuture = new Date(Data.UTC(theTime[3], theTime[1], theTime[2], theTime[4], theTime[5], theTime[6]));
 
                 timeRemain = theFuture - now;
 
-                if ( timeRemain < localStorage.evnotiGap * 36 000 ) notify('');
+                if (timeRemain < localStorage.evnotiGap * 36000) notify('');
             }
-        );
-
+        });
     }
 
     /**

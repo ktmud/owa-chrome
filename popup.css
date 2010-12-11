@@ -149,14 +149,13 @@ ul.mail-list{
     color: #333;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f0f9f3));
 } 
-.mail-body .mbtn {
-    float: right;
-    display: block;
+.mbtn {
+    text-transform: capitalize;
     line-height: 1;
-    position: absolute;
-    right: -1px;
-    bottom: -1px;
+    display: inline-block;
+    float: left;
     padding: 4px 5px 6px 7px;
+    margin-top: -4px;
     color: #575;
     background: rgba(255,255,255,0.7);
     border: 1px solid #cdc;
@@ -165,10 +164,19 @@ ul.mail-list{
     text-shadow: 0 1px 0 #ddd;
     -webkit-transition: all 0.4s;
 }
-.mail-body .reply {
+.mail-body .mbtn {
+    position: absolute;
+    margin-top: 0;
+    right: -1px;
+    bottom: -1px;
+}
+.mbtn.reply {
     right: 40px;
 }
-.mail-body .mbtn:hover {
+.mbtn.delete {
+    right: 80px;
+}
+.mbtn:hover {
     color: #696;
     border-color: #c0d0c0;
     background: rgba(255,255,255,0.9);
