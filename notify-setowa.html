@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="notify.css" />
+<script src="jquery-1.4.2.min.js"></script>
+<script src="common.js"></script>
+</head>
+<body>
+<script>
+    var msgTitle = _LOCALE('noti_t_setowa'), 
+        msgBody = _LOCALE('noti_b_setowa');
+   // <h1><img src="grey.png" />请配置OWA路径</h1>
+   // <p><a href="javascript;:">请提供</a>可用的Office Web Access访问地址。
+
+    $('body').ready(function(){
+        $('body').html(['<h1><img src="yellow.png" />', msgTitle, '</h1><p>', msgBody, '</p>'].join(''));
+
+        $('a').add('h1').click(function(ev){
+            ev.preventDefault();
+            TABS.create({url:'options.html?focus=owaHome', selected:true});
+            setTimeout(window.close,0);
+        });
+
+        setTimeout(function(){window.close();},10000);
+    });
+</script>
+</body>
+</html>

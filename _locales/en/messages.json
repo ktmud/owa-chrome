@@ -1,0 +1,239 @@
+{
+    "extName": {
+        "message": "OWA Chrome Companion",
+        "description": "the name of this extension"
+    },
+    "extDescription": {
+        "message": "More than just an email notifier for Outlook Web Access (owa), which is a webmail client of Microsoft Exchange Server",
+        "description": "description for this extension"
+    },
+    "ba_tip_default": {
+        "message": "OWA Mails",
+        "description": "the default title of browser action icon"
+    },
+    "ba_tip_open": {
+        "message": "No new mail now, click to open owa",
+        "description": ""
+    },
+    "_new_mails": {
+        "message": "new mails",
+        "description": ""
+    },
+    "_new_mail": {
+        "message": "new mail",
+        "description": ""
+    },
+    "noti_t_login": {
+        "message": "Welcome to OWA Chrome Companion",
+        "description": ""
+    },
+    "noti_t_login_tip": {
+        "message": "Click to login",
+        "description": ""
+    },
+    "noti_b_login": {
+        "message": "Please login to OWA now, or <a id=\"set\" href=\"javascript:;\">set up auto-logon</a>",
+        "description": ""
+    },
+    "noti_b_login_skip": {
+        "message": "Don't show this any more",
+        "description": ""
+    },
+    "noti_t_authfail": {
+        "message": "Auto-logon failed",
+        "description": ""
+    },
+    "noti_b_authfail": {
+        "message": "You may provided a wrong username/password combination. <a href=\"javascript:;\">Please reset</a>",
+        "description": ""
+    },
+    "noti_t_setowa": {
+        "message": "Where is the OWA?",
+        "description": ""
+    },
+    "noti_b_setowa": {
+        "message": "<a href=\"javascript:;\" title=\"open options page and set it\">We need you to provide an accessible <i>Office Web Access</i> URL</a>",
+        "description": ""
+    },
+    "handle_them": {
+        "message": "Handle them",
+        "description": ""
+    },
+    "err_connection": {
+        "message": "Couldn't access the OWA server!",
+        "description": ""
+    },
+    "needLogin": {
+        "message": "You need to login to the OWA first",
+        "description": ""
+    },
+    "have_N_mails":{
+        "message": "You have <strong id=\"num\">{num}</strong> unread mails",
+        "description": "{num} will be replaced with the actual number"
+    },
+    "tip_handleNow": {
+        "message": "Handle them now!",
+        "description": ""
+    },
+    "tip_listLink": {
+        "message": "Open in owa",
+        "description": ""
+    },
+    "recieveTime": {
+        "message": "Recieve time",
+        "description": ""
+    },
+    "size": {
+        "message": "Size",
+        "description": ""
+    },
+    "loadingWait": {
+        "message": "Loading...",
+        "description": ""
+    },
+    "open": {
+        "message": "Open",
+        "description": ""
+    },
+    "reply": {
+        "message": "Reply",
+        "description": ""
+    },
+
+    "err_loadMBody":{
+        "message": "Loading message body failed",
+        "description": ""
+    },
+    "tip_readMore": {
+        "message": "Read more",
+        "description": ""
+    },
+    "noMore": {
+        "message": "-- There's no more --",
+        "description": ""
+    },
+    "tip_watchBack": {
+        "message": "Flip back",
+        "description": ""
+    },
+    "tip_contactMail": {
+        "message": "Send an email to the author via OWA",
+        "description": ""
+    },
+    "options": {
+        "message": "Options",
+        "description": ""
+    },
+    "required":{
+        "message": "Required* ",
+        "description": ""
+    },
+    "frequency": {
+        "message": "Frenqency",
+        "description": ""
+    },
+    "opt_frequency_": {
+        "message": "Check out new mails every",
+        "description": ""
+    },
+    "_opt_frequency": {
+        "message": "minutes.",
+        "description": ""
+    },
+    "desktopNotify": {
+        "message": "Desktop Notification",
+        "description": ""
+    },
+    "_opt_DoNotify": {
+        "message": "Notify me when new mails received",
+        "description": ""
+    },
+    "opt_notifyTime_": {
+        "message": ", keep the notification for",
+        "description": ""
+    },
+    "_opt_notifyTime": {
+        "message": "seconds",
+        "description": ""
+    },
+    "previewBubble": {
+        "message": "Preview Bubble",
+        "description": ""
+    },
+    "opt_previewNum_": {
+        "message": "Show previews of ",
+        "description": ""
+    },
+    "_opt_previewNum": {
+        "message": "messages each time",
+        "description": ""
+    },
+    "optip_previewNum": {
+        "message": "When click on the <img src=\"yellow.png\" alt=\"[\/]\" width=\"24\" class=\"inline-icon\" /> icon, a popup window for previewing mails will show. The mails would be numbered if there were too many of them (<label style=\"color: #444;\"><input type=\"checkbox\" name=\"doNum\">always show the numbers</label>).</p>",
+        "description": ""
+    },
+    "notifyLogin": {
+        "message": "Logon Reminder",
+        "description": ""
+    },
+    "_opt_doNotifyLogin": {
+        "message": "Notify me every time I reopened the browser",
+        "description": ""
+    },
+    "optip_doNotifyLogin": {
+        "message": "If you are not logged in to your OWA, the extension will notify you. If you find the notification too annoying, just kill it here.",
+        "description": ""
+    },
+    "autoLogin": {
+        "message": "Auto-logon",
+        "description": ""
+    },
+    "optip_autoLogin": {
+        "message": "Due to the security policy of OWA, when you choose \"This is a secure computer\", it would only save your username. You need to retype the password every time the browser is restarted or the session is time out. Save your logon information here, and this extension would do logon for you quietly.",
+        "description": ""
+    },
+    "opt_username_": {
+        "message": "Username: ",
+        "description": ""
+    },
+    "opt_password": {
+        "message": "Password: ",
+        "description": ""
+    },
+    "opt_owaHome_": {
+        "message": "Outlook Web Access Server URL: ",
+        "description": ""
+    },
+    "optip_owaHome": {
+        "message": "like -> http(s)://mail.your-org.com/owa/",
+        "description": ""
+    },
+    "ok": {
+        "message": "OK",
+        "description": ""
+    },
+    "cancel": {
+        "message": "Cancel",
+        "description": ""
+    },
+    "opt_valimsg_username_1": {
+        "message": "It should be like \"domain\\username\"",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_1": {
+        "message": "like -> http(s)://mail.your-org.com/owa/",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_2": {
+        "message": "Verifying...",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_3": {
+        "message": "OK! Maybe you can set up auto-logon, too?",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_4": {
+        "message": "This url is invalid! Note: only OWA 2007 (OWA 8) allowed",
+        "description": ""
+    }
+}

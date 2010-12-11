@@ -1,0 +1,18 @@
+{
+  "name": "__MSG_extName__",
+  "version": "0.1.1.9",
+  "description": "__MSG_extDescription__",
+  "icons": {"32": "yellow.png", "48": "48.png", "64": "64.png", "128": "128.png"},
+  "browser_action": {
+    "default_icon": "grey.png",
+    "default_title": "__MSG_ba_tip_Default__"
+  },
+  "options_page": "options.html",
+  "background_page": "background.html",
+  "permissions": [
+    "tabs", "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "default_locale": "en"
+}

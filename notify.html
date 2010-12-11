@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="notify.css" />
+<script src="jquery-1.4.2.min.js"></script>
+<script src="common.js"></script>
+</head>
+<body>
+<script>
+    var num = localStorage.unrd, //邮件数
+    msg_title = render(_LOCALE('have_N_mails'), {num: num}),
+    msg_handle = _LOCALE('handle_them'),
+    digest = [],
+    bg = chrome.extension.getBackgroundPage(),
+    mails = parse(localStorage.mails);
+    for(var i=0; i<8 && i<num ; i++){ //8条足够了
+        digest.push( (i+1) + '. ' + mails[i].title );
+    }
+
+    $('body').ready(function(){
+        $('body').html(['<h1><img src="yellow.png" />', msg_title, '</h1><p class="digests">', digest.join(' | ').slice(0,79), '...</p><a id="enter" href="#">', msg_handle, '&gt;&gt;</a>'].join(''));
+        $('#enter').click(function(){
+            bg.OCC.openMail();
+            window.close();
+        });
+        setTimeout(function(){window.close();},localStorage.notifyTime*1000);
+    });
+</script>
+</body>
+</html>

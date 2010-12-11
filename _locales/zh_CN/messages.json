@@ -1,0 +1,238 @@
+{
+    "extName": {
+        "message": "OWA Chrome伴侣",
+        "description": "扩展的名字"
+    },
+    "extDescription": {
+        "message": "服务于 Microsoft Exchange Server 邮件系统自带的WebMail系统—— Office Web Access (OWA)。不仅仅是新邮件提醒。",
+        "description": "扩展的描述"
+    },
+    "ba_tip_default": {
+        "message": "OWA邮件",
+        "description": ""
+    },
+    "ba_tip_open": {
+        "message": "现在没有新邮件，点击打开OWA",
+        "description": ""
+    },
+    "_new_mails": {
+        "message": "新邮件",
+        "description": ""
+    },
+    "_new_mail": {
+        "message": "新邮件",
+        "description": ""
+    },
+    "noti_t_login": {
+        "message": "请先登录OWA！",
+        "description": ""
+    },
+    "noti_t_login_tip": {
+        "message": "点此登录",
+        "description": ""
+    },
+    "noti_b_login": {
+        "message": "请现在登录，或<a id=\"set\" href=\"javascript:;\">设置自动登录</a>。",
+        "description": ""
+    },
+    "noti_b_login_skip": {
+        "message": "不再显示此提醒",
+        "description": ""
+    },
+    "noti_t_authfail": {
+        "message": "自动登录失败!",
+        "description": ""
+    },
+    "noti_b_authfail": {
+        "message": "可能是你提供的域帐号和密码有误，请<a href=\"javascript:;\">重新设置</a>。",
+        "description": ""
+    },
+    "noti_t_setowa": {
+        "message": "请配置OWA路径",
+        "description": ""
+    },
+    "noti_b_setowa": {
+        "message": "<a href=\"javascript;:\" title=\"点此配置\">请提供可用的Office Web Access访问地址。</a>",
+        "description": ""
+    },
+    "handle_them": {
+        "message": "处理",
+        "description": ""
+    },
+    "err_connection": {
+        "message": "目前无法连接OWA服务器！",
+        "description": ""
+    },
+    "needLogin": {
+        "message": "您需要先登录OWA邮件系统",
+        "description": ""
+    },
+    "have_N_mails": {
+        "message": "您有<strong id=\"num\">{num}</strong>封未读邮件",
+        "description": ""
+    },
+    "tip_handleNow": {
+        "message": "马上处理掉它们！",
+        "description": ""
+    },
+    "tip_listLink": {
+        "message": "在owa中打开该邮件",
+        "description": ""
+    },
+    "recieveTime": {
+        "message": "接收时间",
+        "description": ""
+    },
+    "size": {
+        "message": "大小",
+        "description": ""
+    },
+    "loadingWait": {
+        "message": "载入中...",
+        "description": ""
+    },
+    "open": {
+        "message": "打开",
+        "description": ""
+    },
+    "reply": {
+        "message": "回复",
+        "description": ""
+    },
+    "err_loadMBody":{
+        "message": "载入邮件正文出错！",
+        "description": ""
+    },
+    "tip_readMore": {
+        "message": "预览更多邮件",
+        "description": ""
+    },
+    "noMore": {
+        "message": "--没有更多了--",
+        "description": ""
+    },
+    "tip_watchBack": {
+        "message": "查看刚才显示的邮件",
+        "description": ""
+    },
+    "options": {
+        "message": "选项设定",
+        "description": ""
+    },
+    "required":{
+        "message": "必填*",
+        "description": ""
+    },
+    "frequency": {
+        "message": "检查频率",
+        "description": ""
+    },
+    "opt_frequency_": {
+        "message": "每隔",
+        "description": ""
+    },
+    "_opt_frequency": {
+        "message": "分钟检查是否有新邮件",
+        "description": ""
+    },
+    "desktopNotify": {
+        "message": "桌面提醒",
+        "description": ""
+    },
+    "_opt_DoNotify": {
+        "message": "有新邮件时弹出桌面提醒",
+        "description": ""
+    },
+    "opt_notifyTime_": {
+        "message": "，并停留",
+        "description": ""
+    },
+    "_opt_notifyTime": {
+        "message": "秒",
+        "description": ""
+    },
+    "previewBubble": {
+        "message": "预览窗口",
+        "description": ""
+    },
+    "opt_previewNum_": {
+        "message": "每次最多预览",
+        "description": ""
+    },
+    "_opt_previewNum": {
+        "message": "封邮件的标题",
+        "description": ""
+    },
+    "optip_previewNum": {
+        "message": "点击浏览器地址栏右方的扩展图标<img src=\"yellow.png\" alt=\"[\/]\" width=\"24\" class=\"inline-icon\" />时，会弹出预览未读邮件的窗口。如果邮件太多，需要至少两次翻页才能看完，我们会给邮件标上编号。您也可以选择<label style=\"color: #444;\"><input type=\"checkbox\" name=\"doNum\">始终显示这个序号</label>。</p>",
+        "description": ""
+    },
+    "notifyLogin": {
+        "message": "提醒登录",
+        "description": ""
+    },
+    "_opt_doNotifyLogin": {
+        "message": "每次打开浏览器都提醒我登录",
+        "description": ""
+    },
+    "optip_doNotifyLogin": {
+        "message": "要使用本扩展，您需要先登录OWA。如果您处于未登录状态，本扩展会提醒您登录。如果您觉得登录提醒太烦人，可以将其关闭。",
+        "description": ""
+    },
+    "autoLogin": {
+        "message": "配置自动登录",
+        "description": ""
+    },
+    "optip_autoLogin": {
+        "message": "因为OWA的安全策略，即使您在登录时选择了“这是私人计算机”，它也不会保存您的登录状态，浏览器重启后仍然需要再次输入密码。<br>您可以在此保存您的登录信息，本扩展会在后台自动为您登录。要取消自动登录，将下面的输入框留空即可。",
+        "description": ""
+    },
+    "opt_username_": {
+        "message": "用户名：",
+        "description": ""
+    },
+    "opt_password": {
+        "message": "密　码：",
+        "description": ""
+    },
+    "optip_username": {
+        "message": "一般是您的域登录帐号",
+        "description": ""
+    },
+    "opt_owaHome_": {
+        "message": " Outlook Web Access 主机地址: ",
+        "description": ""
+    },
+    "optip_owaHome": {
+        "message": "一般是 http(s)://mail.your-org.com/owa/",
+        "description": ""
+    },
+    "ok": {
+        "message": "确定",
+        "description": ""
+    },
+    "cancel": {
+        "message": "取消",
+        "description": ""
+    },
+    "opt_valimsg_username_1": {
+        "message": "应该是\"域名\\用户名\", 如 mydomain\\myname",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_1": {
+        "message": "一般是 http(s)://mail.your-org.com/owa/",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_2": {
+        "message": "正在验证...",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_3": {
+        "message": "OK！也许您还可以设置一下自动登录？",
+        "description": ""
+    },
+    "opt_valimsg_owaHome_4": {
+        "message": "该地址无效！请注意：本扩展只支持OWA 2007。",
+        "description": ""
+    }
+}

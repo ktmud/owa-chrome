@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="notify.css" />
+<script src="jquery-1.4.2.min.js"></script>
+<script src="common.js"></script>
+</head>
+<body>
+<script>
+    var msgTitle = _LOCALE('noti_t_login'),
+        msgTitleTip = _LOCALE('noti_t_login_tip'),
+        msgBody = _LOCALE('noti_b_login'),
+        msgSkip = _LOCALE('noti_b_login_skip');
+
+    $('body').ready(function(){
+        $('body').html(['<h1><img src="yellow.png" /><a id="login" href="javascript:;" title="', msgTitleTip, '">', msgTitle, '</a></h1><p>', msgBody, '</p><p style="text-align:right; color:#aaa; font-size: 11px;"><a href="javascript:(function(){localStorage.doNotifyLogin=false;setTimeout(window.close,5);})()">',msgSkip,'</a></p>'].join(''));
+
+        $('a#set').click(function(){
+            TABS.create({url:'options.html?focus=username', selected:true});
+            setTimeout(window.close,5);
+        });
+
+        $('a#login').click(function(){
+            OCC.openMail(true);
+            setTimeout(window.close,5);
+        });
+
+        setTimeout(function(){window.close();},6000);
+    });
+</script>
+</body>
+</html>

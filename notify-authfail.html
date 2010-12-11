@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="notify.css" />
+<script src="jquery-1.4.2.min.js"></script>
+<script src="common.js"></script>
+</head>
+<body>
+<script>
+    var msgTitle = _LOCALE('noti_t_authfail'), 
+        msgBody = _LOCALE('noti_b_authfail');
+   // <h1><img src="grey.png" /> 自动登录失败！</h1>
+   // <p>可能是你提供的域帐号和密码有误，请<a href="javascript:;">重新设置</a>。
+
+    $('body').ready(function(){
+        $('body').html(['<h1><img src="grey.png" />', msgTitle, '</h1><p>', msgBody, '</p>'].join(''));
+
+        $('a').add('h1').click(function(){
+            TABS.create({url:'options.html?focus=username', selected:true});
+            setTimeout(window.close,0);
+        });
+
+        setTimeout(function(){window.close();},10000);
+    });
+</script>
+</body>
+</html>

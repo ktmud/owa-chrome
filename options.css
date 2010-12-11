@@ -1,0 +1,153 @@
+body {
+    padding: 0;
+    margin: 0;
+    font: 13px Verdana, Geneva, sans-serif;
+}
+h1 { 
+    text-align: center;
+    font: 400 32px "Candara","Microsoft Yahei","Verdana","黑体",sans-serif;
+    word-spacing: 2px;
+    color: #030;
+    text-shadow: 0 2px 3px #fff;
+    border-bottom: 1px solid #aca;
+    background: #fff -webkit-gradient(linear, 0 0, 0 98%, from(#fff), to(#eefae0));
+    -webkit-box-shadow: inset 0 0 10px #fff;
+    padding: 20px 10px 10px;
+    margin: 0 0 20px;
+}
+
+h1 img {
+    margin: -5px 5px 0 1px;
+    vertical-align: middle;
+}
+
+h2 {
+    padding-bottom: 5px;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+fieldset, section {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1% 1.2%;
+    padding: 1.2%;
+    border: 1px solid #cfdfcf;
+    background: -webkit-gradient( linear, 0 0, 0 20, from(rgb(255,255,255)), to(rgb(248,251,248)) );
+    -webkit-box-shadow: 0 0 2px #cec;
+}
+
+fieldset:nth-of-type(odd) {
+    clear: left;
+}
+legend {
+    font-size: 14px;
+    padding: 6px 9px;
+    border: 1px solid #aca;
+    border-radius: 2px;
+    color: #363;
+    text-shadow: 0 1px 0 #eee;
+    background: -webkit-gradient(linear, 0 10%, 0 100%, from(#fff), to(#f3fff3));
+    display: inline-block;
+    -webkit-box-shadow: 0 0 1px #cdc;
+}
+p {
+    color: #666;
+    line-height: 1.4em;
+    padding: 0;
+    margin: 0.4em 0 1em;
+}
+.tip {
+    color: #888;
+}
+.inline-icon {
+    vertical-align: middle; 
+    display: inline-block; 
+    top: -3px;
+    position: relative;
+}
+input {
+    padding: 3px;
+    border: 1px solid #9a9;
+}
+.valiMsg{
+    margin-left: 5px;
+}
+.error {
+    color: #d66;
+    background: #fee;
+}
+hr {
+    clear: both;
+    visibility: hidden;
+}
+.buttons {
+    clear: both;
+    border-top: 2px dotted #cdc;
+    text-align: center;
+    padding: 15px 10px 50px;
+    margin-top: 15px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ecf6ef), to(#fff));
+}
+button {
+    display: inline-block;
+    cursor: pointer;
+    font: 20px/20px "Candara", "Calibri", "Microsoft Yahei", "Verdana", "黑体",sans-serif;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+    margin-right: 1.5%;
+    border: 1px solid #9c9;
+    padding: 0;
+    border-radius: 3px;
+    color: #252;
+    text-shadow: 0 1px 0 #fff;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#fff),  color-stop(0.1, rgba(235,255,225,1) ), color-stop(0.95, rgba(220,240,210,1)) );
+    -webkit-box-shadow: 0 1px 3px #ded;
+}
+button:active {
+    color: #131;
+    background: #fff -webkit-gradient(linear, 0 60, 0 100%, from(#fff), to(rgba(230,255,233,1)));
+}
+button span {
+    display: inline-block;
+    height: 20px;
+    padding: 8px 18px 8px 19px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 10px rgba(255,255,255,0.6);
+}
+@-webkit-keyframes btn-pulse {
+    0% {
+        color: #252;
+        border: 1px solid #9c9;
+        -webkit-box-shadow: 0 1px 3px #ded;
+    }
+    30% {
+        border: 1px solid #8b8;
+        -webkit-box-shadow: 0 0 10px #afb;
+        color: #272;
+    }
+    100%{
+        color: #252;
+        border: 1px solid #9c9;
+        -webkit-box-shadow: 0 1px 3px #ded;
+    }
+}
+
+button:hover {
+    -webkit-animation: btn-pulse 2s ease-in-out infinite;
+}
+button:hover span{
+    -webkit-box-shadow: inset 0 3px 15px rgba(255,255,255,0.95);
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #999;
+}
+footer a{
+    color: #888;
+}
