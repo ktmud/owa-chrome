@@ -1,4 +1,4 @@
-var occLoader = function() {
+﻿var occLoader = function() {
 
     var setBA = OCC.setBA,
     notify = OCC.notify,
@@ -169,6 +169,8 @@ var occLoader = function() {
         loT = setTimeout(sync, sessionInfo.frequency);
 
         var sunrd = res.match(/inbox[^<]*<\/a><span class="unrd">\((\d+)\)<\/span>/i), unrd = 0;
+        if (!sunrd) sunrd = res.match(/inbox[^<]*<\/a><span class="itm">\[(\d+)\]<\/span>/i);
+
         if (sunrd) unrd = parseInt(sunrd[1]);
 
         if (sessionInfo.isStartUp) {
