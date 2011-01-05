@@ -1,4 +1,4 @@
-﻿var occLoader = function() {
+var occLoader = function() {
 
     var setBA = OCC.setBA,
     notify = OCC.notify,
