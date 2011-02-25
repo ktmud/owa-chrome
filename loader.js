@@ -66,6 +66,7 @@ var occLoader = function() {
             password: pwd,
             isUtf8: '1'
         };
+        var login_url = HOME_URL.replace(/^(http(s)?:\/\/)?/i, "$1" + usr + ':' + pwd + '@' ) + URL_AUTH;
         $.ajax({
             url: HOME_URL + _URL_AUTH,
             data: data,

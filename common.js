@@ -54,14 +54,14 @@ var OCC = function() {
         TABS.getAllInWindow(null, function tabSearch(tabs) {
             for (var i in tabs) {
                 var tab = tabs[i], url = tab.url;
-                if (url.indexOf(HOME_URL) >= 0 &&
-                    url.indexOf(_URL_REPLY_) == -1) {
+                if ((url.indexOf(HOME_URL) >= 0 &&
+                url.indexOf(_URL_REPLY_) == -1) ||
+                url.slice(url.indexOf(target)) == target) {
                     var params = { selected: true };
                     if (typeof target == 'boolean' && target ||
                         url.indexOf('logoff') >= 0 || url.indexOf('logon') >= 0)
                         params.url = HOME_URL;
-                    if (typeof target == 'string' &&
-                        target.indexOf('http') == 0)
+                    if (typeof target == 'string')
                         params.url = target;
 
                     TABS.update(tab.id, params);
@@ -70,8 +70,7 @@ var OCC = function() {
             }
             //所有Tab都遍历完毕 自己新开一个tab
             var url = HOME_URL;
-            if (typeof target == 'string' &&
-                target.indexOf('http') == 0) url = target;
+            if (typeof target == 'string') url = target;
             TABS.create({url: url});
         });
     }
@@ -109,6 +108,11 @@ var OCC = function() {
             sessionInfo.isOnline = false;
             color = [139, 139, 139, 255];
             popup = '';
+        }
+        if (type == 'error') {
+            sessionInfo.isError = true;
+        } else {
+            sessionInfo.isError = false;
         }
 
         if (type == 'offline') {

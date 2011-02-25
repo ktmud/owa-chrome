@@ -243,6 +243,10 @@
         "message": "This url is invalid! Note: only OWA 2007 (OWA 8) allowed",
         "description": ""
     },
+    "opt_valimsg_owaHome_error": {
+        "message": "Fail to load response from server. Is this url correct?",
+        "description": ""
+    },
     "opt_valimsg_owaHome_https": {
         "message": "This url is invalid! Did you input 'http' instead of 'https'?",
         "description": ""

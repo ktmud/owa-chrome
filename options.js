@@ -6,6 +6,7 @@ const _L_opt_valimsg_owaHome_1 = _LOCALE('opt_valimsg_owaHome_1');
 const _L_opt_valimsg_owaHome_2 = _LOCALE('opt_valimsg_owaHome_2');
 const _L_opt_valimsg_owaHome_3 = _LOCALE('opt_valimsg_owaHome_3');
 const _L_opt_valimsg_owaHome_4 = _LOCALE('opt_valimsg_owaHome_4');
+const _L_opt_valimsg_owaHome_https = _LOCALE('opt_valimsg_owaHome_https');
 
 function loadOptions() {
     // Initialize the option controls.
@@ -135,8 +136,8 @@ function validate(doFocus) {
                     owa_OK = true;
                 }else {
                     valimsg_owa.addClass('error');
-                    if (val_owa.indexOf('https') !== 0) {
-                        valimsg_owa.html(_L_opt_valimsg_owaHome_https);
+                    if (val_owa.indexOf('https') == 0) {
+                        valimsg_owa.html(_L_opt_valimsg_owaHome_4);
                     } else {
                         valimsg_owa.html(_L_opt_valimsg_owaHome_https);
                     }
@@ -148,8 +149,8 @@ function validate(doFocus) {
                     return;
                 }
                 valimsg_owa.addClass('error');
-                if (val_owa.indexOf('https') !== 0) {
-                    valimsg_owa.html(_L_opt_valimsg_owaHome_https);
+                if (val_owa.indexOf('https') == 0) {
+                    valimsg_owa.html(_L_opt_valimsg_owaHome_4);
                 } else {
                     valimsg_owa.html(_L_opt_valimsg_owaHome_https);
                 }

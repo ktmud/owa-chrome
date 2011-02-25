@@ -50,6 +50,10 @@ BROWSER_ACTION.onClicked.addListener(function(tab) {
     if (sessionInfo.isLoading) {
         return;
     }
+    if (sessionInfo.isError) {
+        OCC.openMail('options.html');
+        return;
+    }
     if (sessionInfo.isOnline) {
         OCC.openMail();
     } else {

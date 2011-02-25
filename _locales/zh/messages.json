@@ -243,6 +243,10 @@
         "message": "该地址无效！请注意：本扩展只支持OWA 2007。",
         "description": ""
     },
+    "opt_valimsg_owaHome_error": {
+        "message": "无法从该地址获得响应。您是否遇到了网络问题？",
+        "description": ""
+    },
     "opt_valimsg_owaHome_https": {
         "message": "该地址无效！是不是应该用 https 才对？",
         "description": ""
