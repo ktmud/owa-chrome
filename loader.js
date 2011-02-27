@@ -20,9 +20,20 @@ var occLoader = function() {
         }else { //如果未登录
             setBA('offline');
 
+            var usr = localStorage.username,
+            pwd = localStorage.password, url = HOME_URL;
+
+            if (/^https/.test(HOME_URL)) {
+                url = url.replace(/(\/\/)?([\w\n\.\-]+)\//, '$1$2:443/');
+            } else {
+                url = url.replace(/(\/\/)?([\w\n\.\-]+)\//, '$1$2:80/');
+            }
+
+            url = url.replace(/^(http(s)?:\/\/)?/i, '$1' + encodeURI(usr) + ':' + encodeURI(pwd) + '@' );
+
             //登录判定
             $.ajax({
-                url: HOME_URL,
+                url: url,
                 success: function(res) {
                     //如果登录成功，应该是在开始页
                     if (res.indexOf('StartPage') >= 0) {
@@ -31,8 +42,6 @@ var occLoader = function() {
                         sync(notiNewMail, res);
                         if (openHome) openMail(true);
                     }else {
-                        var usr = localStorage.username,
-                        pwd = localStorage.password;
                         if (usr && pwd) { //如果提供了用户名和密码，尝试登录
                             login(usr, pwd, notiNewMail, openHome);
                             return;
@@ -51,6 +60,9 @@ var occLoader = function() {
                     //notify('检查新邮件失败','可能是您网络不通或服务器故障，目前无法连接阿里邮件服务器。');
                     notify(_LOCALE('notiTitle_CheckError'),
                            _LOCALE('notiBody_CheckError'));
+
+                    //retry every 90 seconds.
+                    setTimeout(auth, 90000);
                 }
             });
         }
@@ -66,7 +78,7 @@ var occLoader = function() {
             password: pwd,
             isUtf8: '1'
         };
-        var login_url = HOME_URL.replace(/^(http(s)?:\/\/)?/i, "$1" + usr + ':' + pwd + '@' ) + URL_AUTH;
+        //var login_url = HOME_URL.replace(/^(http(s)?:\/\/)?/i, "$1" + usr + ':' + pwd + '@' ) + _URL_AUTH;
         $.ajax({
             url: HOME_URL + _URL_AUTH,
             data: data,
