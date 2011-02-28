@@ -322,7 +322,7 @@ var occPopup = function() {
     function go() {
         var ul = '<ul class="mail-list">' + genLi() + '</ul>';
         $('body').html([
-            '<h1><a href="#" title="',
+            '<h1><a title="',
             _L_tip_handleNow,  //马上处理这些邮件！
             '">',
             render(_L_have_N_mails, {num: NUM_UNRD}),
