@@ -10,6 +10,7 @@ h1 {
     margin: 6px;
 }
 h1 a{
+    cursor: pointer;
     text-shadow: 0 1px #eee;
     font: 600 14px/1 Verdana;
     display: block;
