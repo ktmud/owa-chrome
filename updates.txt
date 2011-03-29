@@ -1,3 +1,6 @@
+= ver 0.1.2.5 =
+修正markRead的报错
+
 = ver 0.1.2.3 =
 适应有www authentication的服务器
 验证失败时会自动重新尝试连接

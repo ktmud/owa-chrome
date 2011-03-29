@@ -111,8 +111,6 @@ var OCC = function() {
         }
         if (type == 'error') {
             sessionInfo.isError = true;
-        } else {
-            sessionInfo.isError = false;
         }
 
         if (type == 'offline') {

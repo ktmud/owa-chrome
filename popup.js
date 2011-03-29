@@ -233,6 +233,7 @@ var occPopup = function() {
     */
     function markRead(theLi) {
         if (!theLi.hasClass('loaded')) return;
+        if (theLi.hasClass('haveRead')) return;
 
         theLi.addClass('haveRead');
 
