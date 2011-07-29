@@ -59,6 +59,10 @@
         "message": "處理",
         "description": ""
     },
+    "ignore": {
+        "message": "忽略這些電郵",
+        "description": ""
+    },
     "err_connection": {
         "message": "目前無法連接OWA服務器！",
         "description": ""
@@ -69,6 +73,14 @@
     },
     "have_N_mails": {
         "message": "您有<strong id=\"num\">{num}</strong>封未讀電郵",
+        "description": ""
+    },
+    "mark_as_read": {
+        "message": "标为已读",
+        "description": ""
+    },
+    "tip_mark_as_read": {
+        "message": "将这 {num} 封邮件全部标为已读",
         "description": ""
     },
     "tip_handleNow": {
@@ -149,6 +161,10 @@
     },
     "_opt_notifyTime": {
         "message": "秒",
+        "description": ""
+    },
+    "_opt_noDupNotify": {
+        "message": "已忽略的電郵就不再提醒",
         "description": ""
     },
     "previewBubble": {

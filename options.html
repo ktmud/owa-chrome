@@ -8,5 +8,73 @@
 <script src="jquery-1.4.4.min.js"></script>
 <script src="common.js"></script>
 <script src="options.js"></script>
+<script id="template" type="text/template">
+  <h1>
+    <img src="owa-companion-64.png" alt="Email">{extName} {options} 
+  </h1>
+  <form id="options">
+    <fieldset>
+      <legend>{frequency}</legend>
+      <label>{opt_frequency_}<select name="frequency">
+          <option>1</option>
+          <option>3</option>
+          <option>5</option>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+          <option>30</option>
+          <option>60</option>
+          <option>120</option>
+      </select>{_opt_frequency}</label>
+    </fieldset>
+    <fieldset>
+      <legend>{desktopNotify}</legend>
+      <p>
+      <label><input type="checkbox" name="doNotify" checked onchange="ghost(this.checked)">{_opt_DoNotify}</label><label id="sec_notiTime">{opt_notifyTime_}<input id="notifyTime" name="notifyTime" type="number" value="6" min="1" max="20" size="1" />{_opt_notifyTime}</label>
+      </p>
+      <p>
+      <label><input type="checkbox" name="noDupNotify" checked>{_opt_noDupNotify}</label> <br /> {optip_noDupNotify}
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>{previewBubble}</legend>
+      <label>{opt_previewNum_}<input id="previewNum" name="previewNum" type="number" value="7" min="1" max="13" size="1" />{_opt_previewNum}</label>
+      <p>{optip_previewNum}</p>
+    </fieldset>
+    <fieldset>
+      <legend>{notifyLogin}</legend>
+      <label>
+        <input type="checkbox" name="doNotifyLogin">{_opt_doNotifyLogin}</label>
+      <p>{optip_doNotifyLogin}</p>
+    </fieldset>
+    <fieldset style="width: 94%;">
+      <legend>{autoLogin}</legend>
+      <p>{optip_autoLogin}</p>
+      <p><label>{opt_username_}<input id="username" name="username" type="text" /></label>
+      <span id="vali_username" class="valiMsg">{optip_username}</span>
+      </p> 
+      <p>
+      <label>{opt_password}<input id="password" name="password" type="password" /></label>
+      </p>
+    </fieldset>
+    <fieldset style="width: 94%;">
+      <label>
+        <strong>{required}</strong>{opt_owaHome_}<input type="text" id="owaHome" name="owaHome" size="60" />
+      </label>
+      <span id="vali_owaHome" class="valiMsg tip">{optip_owaHome}</span>
+    </fieldset>
+    <hr />
+    <div class="buttons">
+      <button type="submit" id="submit">
+        <span>{ok}</span>
+      </button>
+      <button type="button" onclick="window.close();">
+        <span>{cancel}</span>
+    </button>&nbsp; </div>
+  </form>
+  <footer>&copy;2010  <a href="https://twitter.com/ktmud" target="_blank" title="My Twitter">ktmud</a> <a href="mailto:jyyjcc@gmail.com" target="_blank" title="{tip_contactMail}">jyyjcc@gmail.com</a>
+  </footer>
+</script>
 </body>
 </html>

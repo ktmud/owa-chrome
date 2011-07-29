@@ -59,6 +59,10 @@
         "message": "Handle them",
         "description": ""
     },
+    "ignore": {
+        "message": "Ignore",
+        "description": ""
+    },
     "err_connection": {
         "message": "Couldn't access the OWA server!",
         "description": ""
@@ -70,6 +74,14 @@
     "have_N_mails":{
         "message": "You have <strong id=\"num\">{num}</strong> unread mails",
         "description": "{num} will be replaced with the actual number"
+    },
+    "mark_as_read": {
+        "message": "Mark as read",
+        "description": ""
+    },
+    "tip_mark_as_read": {
+        "message": "Mark all these {num} mails as read.",
+        "description": ""
     },
     "tip_handleNow": {
         "message": "Handle them now!",
@@ -148,7 +160,11 @@
         "description": ""
     },
     "_opt_DoNotify": {
-        "message": "Notify me when new mails received",
+        "message": "Notify me when new message arrived",
+        "description": ""
+    },
+    "_opt_noDupNotify": {
+        "message": "Don't notify messages I ignored.",
         "description": ""
     },
     "opt_notifyTime_": {

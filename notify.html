@@ -8,24 +8,53 @@
 </head>
 <body>
 <script>
-    var num = localStorage.unrd, //邮件数
-    msg_title = render(_LOCALE('have_N_mails'), {num: num}),
-    msg_handle = _LOCALE('handle_them'),
-    digest = [],
-    bg = chrome.extension.getBackgroundPage(),
-    mails = parse(localStorage.mails);
-    for(var i=0; i<8 && i<num ; i++){ //8条足够了
-        digest.push( (i+1) + '. ' + mails[i].title );
-    }
+  var num = localStorage.unrd, //邮件数
+  msg_title = render(_LOCALE('have_N_mails'), {num: num}),
+  msg_handle = _LOCALE('handle_them'),
+  mgs_ignore = _LOCALE('ignore'),
+  digest = [], mail_ids = [],
+  bg = chrome.extension.getBackgroundPage(),
+  mails = parse(localStorage.mails),
+  ignored = parse(localStorage.ignored) || [];
 
-    $('body').ready(function(){
-        $('body').html(['<h1><img src="yellow.png" />', msg_title, '</h1><p class="digests">', digest.join(' | ').slice(0,79), '...</p><a id="enter" href="#">', msg_handle, '&gt;&gt;</a>'].join(''));
-        $('#enter').click(function(){
-            bg.OCC.openMail();
-            window.close();
-        });
-        setTimeout(function(){window.close();},localStorage.notifyTime*1000);
-    });
+  for (var i = 0, len = mails.length; i < len; i++) {
+    var id = mails[i].id;
+    // 7 messages in digest at most.
+    if (digest.length < 7 && ignored.indexOf(id) == -1) {
+      digest.push((i+1) + '. ' + mails[i].title);
+    }
+    mail_ids.push(id);
+  }
+
+  if (!digest.length) {
+    window.close();
+    return;
+  }
+
+  $('body').ready(function(){
+    $('body').html(['<h1><img src="yellow.png" />',
+      msg_title,
+      '</h1><p class="digests">', 
+      digest.join(' | ').slice(0,79), '...</p><a id="ignore" href="#">',
+      mgs_ignore ,
+      '</a><a id="enter" href="#">',
+      msg_handle,
+    '&gt;&gt;</a>'].join('')
+  );
+  $('#enter').click(function(){
+    e.preventDefault();
+    bg.OCC.openMail();
+    window.close();
+  });
+  $('#ignore').click(function(e){
+    e.preventDefault();
+    if(parse(localStorage.noDupNotify)) {
+      localStorage.ignored = JSON.stringify(ignored.concat(mail_ids));
+    }
+    window.close();
+  });
+  setTimeout(function(){window.close();},localStorage.notifyTime*1000);
+});
 </script>
 </body>
 </html>

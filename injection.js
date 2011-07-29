@@ -15,6 +15,3 @@ function onRequest(request, sender, sendRes){
 }
 
 chrome.extension.onRequest.addListener(onRequest);
-
-
-

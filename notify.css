@@ -53,14 +53,20 @@ a{
     color: #999;
 }
 
-a#enter {
+a#enter, a#ignore {
     font: 12px/1 'Tahoma',serif;
     color: #aaa;
     display: block;
     text-align: right;
     margin-bottom: 5px;
     margin-right: 8px;
+    cursor: pointer;
 }
-a#enter:hover {
+a#enter:hover, a#ignore:hover {
     color: #d40;
+}
+a#ignore {
+  color: #888;
+  float: left;
+  margin-left: 10px;
 }

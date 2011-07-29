@@ -8,6 +8,7 @@ body {
 h1 {
     padding: 0;
     margin: 6px;
+    position: relative;
 }
 h1 a{
     cursor: pointer;
@@ -22,6 +23,13 @@ h1 a{
     border-radius: 2px;
     -webkit-box-shadow: 0 0px 1px #dfdfde;
     -webkit-transition: all 0.3s;
+}
+h1 .mbtn {
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  font-size: 13px;
+  font-weight: 200;
 }
 h1 a:hover {
     color: #333;
