@@ -41,17 +41,17 @@
       msg_handle,
     '&gt;&gt;</a>'].join('')
   );
-  $('#enter').click(function(){
-    e.preventDefault();
+  $('#enter').click(function(e){
     bg.OCC.openMail();
     window.close();
+    e.preventDefault();
   });
   $('#ignore').click(function(e){
-    e.preventDefault();
     if(parse(localStorage.noDupNotify)) {
       localStorage.ignored = JSON.stringify(ignored.concat(mail_ids));
     }
     window.close();
+    e.preventDefault();
   });
   setTimeout(function(){window.close();},localStorage.notifyTime*1000);
 });
