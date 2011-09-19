@@ -29,7 +29,7 @@ var occPopup = function() {
   setNum = OCC.setNum;
 
   const LOAD_DELAY = 600; //鼠标悬停多久开始载入
-  const READ_TIME = 2500; //给用户多少时间阅读
+  const READ_TIME = 1500; //给用户多少时间阅读
   const NUM_PERPAGE = parse(localStorage.previewNum); //每页预览的条目数
   //const DO_NUM = parse(localStorage.doNum); //是否显示邮件编号
   const DO_NUM = parse(localStorage.doNum) ||
