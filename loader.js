@@ -69,7 +69,7 @@ var occLoader = function() {
   function login(usr, pwd, notiNewMail, openHome) {
     var data = {
       destination: HOME_URL,
-      flags: '4',
+      flags: '5',
       forcedownlevel: '0',
       trusted: '4',
       username: usr,
