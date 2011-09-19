@@ -27,8 +27,10 @@ var occLoader = function() {
       //url = url.replace(/(\/\/)?([\w\n\.\-]+)\//, '$1$2:80/');
       //}
 
-      //incase we need http auth.
-      url = url.replace(/^(http(s)?:\/\/)?/i, '$1' + encodeURI(usr) + ':' + encodeURI(pwd) + '@' );
+      if (usr && pwd) {
+        //incase we need http auth.
+        url = url.replace(/^(http(s)?:\/\/)?/i, '$1' + encodeURI(usr) + ':' + encodeURI(pwd) + '@' );
+      }
 
       //登录判定
       $.ajax({
