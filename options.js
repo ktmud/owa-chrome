@@ -17,6 +17,7 @@ var valNames = [
   'frequency'
 ], checkNames = [
   'doNotify',
+  'cookieAuth',
   'noDupNotify',
   'doNum',
   'doNotifyLogin'
@@ -24,16 +25,13 @@ var valNames = [
 
 function loadOptions() {
   // Initialize the option controls.
-  options.doNotify.checked = parse(localStorage.doNotify);
-  options.noDupNotify.checked = parse(localStorage.noDupNotify);
-  if (options.doNum) options.doNum.checked = parse(localStorage.doNum);
-  options.doNotifyLogin.checked = parse(localStorage.doNotifyLogin);
-  options.frequency.value = parseInt(localStorage.frequency);
-  options.notifyTime.value = parseInt(localStorage.notifyTime);
-  options.previewNum.value = parseInt(localStorage.previewNum);
-  options.username.value = localStorage.username || '';
-  options.password.value = localStorage.password || '';
-  options.owaHome.value = localStorage.owaHome || '';
+  checkNames.forEach(function(item) {
+    options[item] && (options[item].checked = parse(localStorage[item]));
+  });
+
+  valNames.forEach(function(item) {
+    options[item] && (options[item].value = localStorage[item] || '');
+  });
 
   if (window.location.search.indexOf('focus=') >= 0) {
     var focusId = window.location.search.split('focus=')[1];
@@ -65,7 +63,7 @@ function updateOptions() {
   var owaHomeNow = localStorage.owaHome;
 
   if (owaHomePrev != owaHomeNow) {
-    bg.HOME_URL = owaHomeNow;
+    bg.URL = bg.HOME_URL = owaHomeNow;
     if (!bg.sessionInfo.isStarted) {
       bg.start();
       window.close();

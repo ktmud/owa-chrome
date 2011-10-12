@@ -224,11 +224,19 @@
         "description": ""
     },
     "opt_owaHome_": {
-        "message": " Outlook Web Access 主机地址: ",
+        "message": " Outlook Web Access 首页地址: ",
         "description": ""
     },
     "optip_owaHome": {
-        "message": "一般是 http(s)://mail.your-org.com/owa/",
+        "message": "一般是 https://mail.your-org.com/owa/",
+        "description": ""
+    },
+    "opt_cookieAuth": {
+        "message": "服务器采用 \"cookieAuth\" 验证登录",
+        "description": ""
+    },
+    "optip_coockieAuth": {
+        "message": "如果您在类似于 <em>../CookieAuth.dll?GetLogon?curl=...</em> 的页面登录，请勾选此选项",
         "description": ""
     },
     "ok": {

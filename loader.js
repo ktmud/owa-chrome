@@ -69,7 +69,16 @@ var occLoader = function() {
   }
 
   function login(usr, pwd, notiNewMail, openHome) {
-    var data = {
+    var data = parse(localStorage.cookieAuth) ? {
+      curl: 'Z2Fowa',
+      flags: '0',
+      forcedownlevel: '0',
+      formdir: '1',
+      trusted: '0',
+      chkBsc: '1',
+      username: usr,
+      password: pwd 
+    } : {
       destination: HOME_URL,
       flags: '5',
       forcedownlevel: '0',

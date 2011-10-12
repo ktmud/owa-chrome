@@ -219,6 +219,14 @@
         "message": "一般是 http(s)://mail.your-org.com/owa/",
         "description": ""
     },
+    "opt_cookieAuth": {
+        "message": "採用 \"cookieAuth\" 認證登錄",
+        "description": ""
+    },
+    "optip_coockieAuth": {
+        "message": "如果您在類似 <em>../CookieAuth.dll?GetLogon?curl=...</em> 的页面錄入登錄訊息，請勾選此選項",
+        "description": ""
+    },
     "ok": {
         "message": "確定",
         "description": ""

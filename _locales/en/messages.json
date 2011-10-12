@@ -231,6 +231,14 @@
         "message": "like -> http(s)://mail.your-org.com/owa/",
         "description": ""
     },
+    "opt_cookieAuth": {
+        "message": "use \"cookieAuth\"",
+        "description": ""
+    },
+    "optip_coockieAuth": {
+        "message": "if you do logon in a page like <em>../CookieAuth.dll?GetLogon?curl=...</em>",
+        "description": ""
+    },
     "ok": {
         "message": "OK",
         "description": ""

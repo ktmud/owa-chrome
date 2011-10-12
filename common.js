@@ -4,7 +4,7 @@ const UNKNOWN_COUNT = '?';
 const MAX_UNREAD = 100;
 
 const _URL_LOGIN = 'auth/logon.aspx';
-const _URL_AUTH = 'auth/owaauth.dll';
+const _URL_AUTH = localStorage.cookieAuth ? '../CookieAuth.dll?Logon' : 'auth/owaauth.dll';
 const _URL_EVNOTI = 'ev.owa?ns=Notify&ev=Poll';
 const _URL_SINGLE_ = '?ae=Item&id=';
 const _URL_REPLY_ = '?ae=PreFormAction&a=Reply&id=';
