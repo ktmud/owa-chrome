@@ -70,6 +70,7 @@ var occLoader = function() {
 
   function login(usr, pwd, notiNewMail, openHome) {
     var data = parse(localStorage.cookieAuth) ? {
+      destination: SYNC_URL,
       curl: 'Z2Fowa',
       flags: '0',
       forcedownlevel: '0',
@@ -79,10 +80,11 @@ var occLoader = function() {
       username: usr,
       password: pwd 
     } : {
-      destination: HOME_URL,
+      destination: SYNC_URL,
       flags: '5',
       forcedownlevel: '0',
       trusted: '4',
+      chkBsc: '1',
       username: usr,
       password: pwd,
       isUtf8: '1'
@@ -169,7 +171,7 @@ var occLoader = function() {
     }
 
     $.ajax({
-      url: URL,
+      url: SYNC_URL,
       success: function(res) {
         handleRes(res, noti);
         if (typeof callback == 'function') callback.apply(this);

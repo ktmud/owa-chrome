@@ -9,6 +9,7 @@ var sessionInfo = {
 };
 
 var HOME_URL = URL = localStorage.owaHome;
+var SYNC_URL = HOME_URL + _URL_SYNC;
 
 var initialize = function() {
   //默认配置
