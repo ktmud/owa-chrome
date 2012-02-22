@@ -1,39 +1,39 @@
 //Locales
-const _L_have_N_mails = _LOCALE('have_N_mails');
-const _L_mark_as_read = _LOCALE('mark_as_read');
+const _L_have_N_mails     = _LOCALE('have_N_mails');
+const _L_mark_as_read     = _LOCALE('mark_as_read');
 const _L_tip_mark_as_read = _LOCALE('tip_mark_as_read');
-const _L_tip_handleNow = _LOCALE('tip_handleNow');
-const _L_tip_listLink = _LOCALE('tip_listLink');
-const _L_recieveTime = _LOCALE('recieveTime');
-const _L_size = _LOCALE('size');
-const _L_loadingWait = _LOCALE('loadingWait');
-const _L_open = _LOCALE('open');
-const _L_reply = _LOCALE('reply');
-const _L_delete = _LOCALE('delete');
-const _L_err_loadMBody = _LOCALE('err_loadMBody');
-const _L_tip_readMore = _LOCALE('tip_readMore');
-const _L_noMore = _LOCALE('noMore');
-const _L_tip_watchBack = _LOCALE('tip_watchBack');
+const _L_tip_handleNow	  = _LOCALE('tip_handleNow');
+const _L_tip_listLink	  = _LOCALE('tip_listLink');
+const _L_recieveTime	  = _LOCALE('recieveTime');
+const _L_size 			  = _LOCALE('size');
+const _L_loadingWait	  = _LOCALE('loadingWait');
+const _L_open			  = _LOCALE('open');
+const _L_reply			  = _LOCALE('reply');
+const _L_delete			  = _LOCALE('delete');
+const _L_err_loadMBody 	  = _LOCALE('err_loadMBody');
+const _L_tip_readMore	  = _LOCALE('tip_readMore');
+const _L_noMore			  = _LOCALE('noMore');
+const _L_tip_watchBack    = _LOCALE('tip_watchBack');
 
-const NUM_UNRD = parse(localStorage.unrd); //总未读条目数
+const NUM_UNRD = parse(localStorage.unrd); //总未读条目数 - The total number of unread items
 
 var bg = chrome.extension.getBackgroundPage();
 
-var occPopup = function() {
+var occPopup   = function() {
   var HOME_URL = HOME_URL || localStorage.owaHome,
-  URL_SINGLE = HOME_URL + _URL_SINGLE_,
-  URL_REPLY = HOME_URL + _URL_REPLY_,
-  setBA = OCC.setBA,
-  notify = OCC.notify,
-  openMail = OCC.openMail,
-  setNum = OCC.setNum;
+  URL_SINGLE   = HOME_URL + _URL_SINGLE_,
+  URL_REPLY    = HOME_URL + _URL_REPLY_,
+  setBA        = OCC.setBA,
+  notify       = OCC.notify,
+  openMail     = OCC.openMail,
+  setNum       = OCC.setNum;
 
-  const LOAD_DELAY = 600; //鼠标悬停多久开始载入
-  const READ_TIME = 1500; //给用户多少时间阅读
-  const NUM_PERPAGE = parse(localStorage.previewNum); //每页预览的条目数
-  //const DO_NUM = parse(localStorage.doNum); //是否显示邮件编号
-  const DO_NUM = parse(localStorage.doNum) ||
-  (NUM_UNRD > NUM_PERPAGE * 2); //只有当需要翻两页以上时显示邮件编号
+  const LOAD_DELAY  = 600; //鼠标悬停多久开始载入 - Hover your mouse over how long it begins to load
+  const READ_TIME   = 1500; //给用户多少时间阅读 - To the user how much time to read
+  const NUM_PERPAGE = parse(localStorage.previewNum); //每页预览的条目数 - The number of entries per page preview
+  //const DO_NUM      = parse(localStorage.doNum); //是否显示邮件编号 - Whether to display the message number
+  const DO_NUM      = parse(localStorage.doNum) ||
+  (NUM_UNRD > NUM_PERPAGE * 2); //只有当需要翻两页以上时显示邮件编号 - The message number is displayed only when the need to turn more than two
 
   //最主要的信息 [{title:'',from:'',id:'',time:'',size:''}]
   var mails = parse(localStorage.mails),
@@ -58,7 +58,7 @@ var occPopup = function() {
   const NUM_INSTORE = mails.length; //localStorage存入的未读条目数
 
   var hasPrev = false, isEnd = false, //用于控制上下翻页的状态
-  mIndex = 0, //当前项的索引
+  mIndex  = 0, //当前项的索引
   liTotal = 0, //正显示的条目数
   //t_liTitle, //设置li title的倒计时
   t_loadMbody, //鼠标悬浮在li上载入邮件正文的倒计时
