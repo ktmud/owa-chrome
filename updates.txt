@@ -1,12 +1,15 @@
 = ver 0.1.2.5 =
-修正markRead的报错
+修正markRead的报错 - Fix markRead the error
 
 = ver 0.1.2.3 =
-适应有www authentication的服务器
-验证失败时会自动重新尝试连接
+适应有www authentication的服务器 - Adapt to the www the authentication server
+验证失败时会自动重新尝试连接 - Validation fails will automatically re-attempt to connect
 
 = ver 0.1.2 =
 更新图标，修正一些文案错误
+--------------------
+Update icon, fix some copy errors
 
 = ver 0.1.1 = 
-去除cookie需求，使得适应更低版本的Chromium，例如枫树浏览器
+去除cookie需求，使得适应更低版本的Chromium，例如枫树浏览器 - Remove the cookie needs to adapt to a lower 
+                                                           version of the Chromium, such as maple browser
