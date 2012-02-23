@@ -5,14 +5,14 @@ const _L_tip_mark_as_read = _LOCALE('tip_mark_as_read');
 const _L_tip_handleNow	  = _LOCALE('tip_handleNow');
 const _L_tip_listLink	  = _LOCALE('tip_listLink');
 const _L_recieveTime	  = _LOCALE('recieveTime');
-const _L_size 			  = _LOCALE('size');
+const _L_size 		  = _LOCALE('size');
 const _L_loadingWait	  = _LOCALE('loadingWait');
-const _L_open			  = _LOCALE('open');
-const _L_reply			  = _LOCALE('reply');
-const _L_delete			  = _LOCALE('delete');
+const _L_open		  = _LOCALE('open');
+const _L_reply		  = _LOCALE('reply');
+const _L_delete		  = _LOCALE('delete');
 const _L_err_loadMBody 	  = _LOCALE('err_loadMBody');
 const _L_tip_readMore	  = _LOCALE('tip_readMore');
-const _L_noMore			  = _LOCALE('noMore');
+const _L_noMore		  = _LOCALE('noMore');
 const _L_tip_watchBack    = _LOCALE('tip_watchBack');
 
 const NUM_UNRD = parse(localStorage.unrd); //总未读条目数 - The total number of unread items
@@ -35,12 +35,12 @@ var occPopup   = function() {
   const DO_NUM      = parse(localStorage.doNum) ||
   (NUM_UNRD > NUM_PERPAGE * 2); //只有当需要翻两页以上时显示邮件编号 - The message number is displayed only when the need to turn more than two
 
-  //最主要的信息 [{title:'',from:'',id:'',time:'',size:''}]
+  //最主要的信息 - The Main Information [{title:'',from:'',id:'',time:'',size:''}]
   var mails = parse(localStorage.mails),
-  haveRead = parse(localStorage.haveRead) || []; //已经通过 预览 阅读过的邮件，一个 id 的数组
+  haveRead  = parse(localStorage.haveRead) || []; //已经通过 预览 阅读过的邮件 - Read e-mail through the preview，一个 id 的数组 - A id Array
 
 
-  //清扫掉已经阅读的
+  //清扫掉已经阅读的 - Swept out to have read
   if (haveRead.length >= 1) {
     for (var i = mails.length - 1; i >= 0; i--) {
       if (haveRead.indexOf(mails[i].id) != -1) {
@@ -55,14 +55,14 @@ var occPopup   = function() {
     window.close();
   }
 
-  const NUM_INSTORE = mails.length; //localStorage存入的未读条目数
+  const NUM_INSTORE = mails.length; //localStorage存入的未读条目数 - deposit the number of entries
 
-  var hasPrev = false, isEnd = false, //用于控制上下翻页的状态
-  mIndex  = 0, //当前项的索引
-  liTotal = 0, //正显示的条目数
-  //t_liTitle, //设置li title的倒计时
-  t_loadMbody, //鼠标悬浮在li上载入邮件正文的倒计时
-  t_read; //用户阅读正文的倒计时
+  var hasPrev = false, isEnd = false, //用于控制上下翻页的状态 - For the control flip up and down the state
+  mIndex  = 0, //当前项的索引 - The current index
+  liTotal = 0, //正显示的条目数 - Shows the number of entries
+  //t_liTitle, //设置li title的倒计时 - Set li title countdown
+  t_loadMbody, //鼠标悬浮在li上载入邮件正文的倒计时 - Mouse suspended in countdown to load the body of the message on the li
+  t_read; //用户阅读正文的倒计时 - Users read the body of the countdown
 
 
   var unrd_now = NUM_UNRD;
@@ -84,7 +84,7 @@ var occPopup   = function() {
       '><a class="title" data-id="',
       single.id,
       '" title="',
-      _L_tip_listLink, //在网页中打开该邮件
+      _L_tip_listLink, //在网页中打开该邮件 - Open the message in a Web page
       '">',
       DO_NUM ? (mIndex + 1) + '. ' : '',
       single.title,
@@ -92,10 +92,10 @@ var occPopup   = function() {
       single.from,
       '<div class="more-info">',
       '<div class="meta"><span class="time">',
-      _L_recieveTime, ': ',  //接收时间
+      _L_recieveTime, ': ',  //接收时间 - Receive time
       single.time,
       '<span><span class="size">',
-      _L_size, ': ',  //大小
+      _L_size, ': ',  //大小 - Size
       single.size,
       '</span></div><div class="mail-body">',
       _L_loadingWait,
@@ -107,14 +107,14 @@ var occPopup   = function() {
   function markAllAsRead() {
     //send a post request to owa
     var post_data = {
-      hidpnst: '',
+      hidpnst:     '',
       hidactbrfld: '', 
-      hidcid: '', 
-      hidso: '',
-      hidpid: "MessageView",
-      chkhd: "on",
-      chkmsg: [],
-      hidcmdpst: "markread"
+      hidcid:      '', 
+      hidso:       '',
+      hidpid:      "MessageView",
+      chkhd:       "on",
+      chkmsg:      [],
+      hidcmdpst:   "markread"
     };
 
     mails.forEach(function(item) {
@@ -125,14 +125,14 @@ var occPopup   = function() {
 
       try {
         var fld_id = res.match(/a_sFldId\s*=\s*"([^"]*)"/)[1],
-        canary = res.match(/name="hidcanary" value="([^"]*)"/)[1];
+        canary     = res.match(/name="hidcanary" value="([^"]*)"/)[1];
         //mtgmsg = res.match(/name="hidmtgmsg" value="([^"]*)"/)[1];
 
         post_data.hidcanary = canary;
         //post_data.hidmtgmsg = canary;
 
         $.ajax({
-            url: HOME_URL + '?ae=StartPage&slUsng=0&pg=1&id=' + fld_id,
+            url:  HOME_URL + '?ae=StartPage&slUsng=0&pg=1&id=' + fld_id,
             data: post_data,
             type: 'POST',
             success: function(data) {
@@ -152,7 +152,7 @@ var occPopup   = function() {
   }
 
   /*
-  * 为邮件标题列表指派事件
+  * 为邮件标题列表指派事件 - Assigned to the event to the list of message headers
   */
   function assign() {
     $('body').delegate('a', 'click', function(e) {
@@ -164,7 +164,7 @@ var occPopup   = function() {
       }
       if (this.hash != '#no-openmail') {
         var id = $(this).attr('data-id'),
-        url = this.href || (id ? URL_SINGLE + encodeURIComponent(id) : HOME_URL);
+        url    = this.href || (id ? URL_SINGLE + encodeURIComponent(id) : HOME_URL);
         openMail(url);
         return false;
       }
@@ -175,7 +175,7 @@ var occPopup   = function() {
       if (ev.target.nodeName == 'DIV' || theMore.is(':animated')) return;
 
       tclear(t_loadMbody);
-      tclear(t_read);
+      tclear(t_read     );
 
       theMore.slideToggle(200, function() {
         theLi.toggleClass('opened');
@@ -198,16 +198,16 @@ var occPopup   = function() {
       var theMore = theLi.children('div.more-info');
 
       tclear(t_loadMbody);
-      tclear(t_read);
+      tclear(t_read     );
 
-      if (ev.type == 'mouseenter') { //鼠标移入时
+      if (ev.type == 'mouseenter') { //鼠标移入时 - Mouse move
         theMore.animate({opacity: 1},200).css('visibility', '');
-        if (theLi.hasClass('opened')) {  //如果已经展开
-          if (!theLi.hasClass('haveRead')) {  //如果还是未读状态
+        if (theLi.hasClass('opened')) {  //如果已经展开 - If you have already started
+          if (!theLi.hasClass('haveRead')) {  //如果还是未读状态 - If you still can not read the state
             t_read = setTimeout(function() { markRead(theLi); }, READ_TIME);
           }
         }else {
-          //延时主动展开li
+          //延时主动展开li - Delay the initiative to expand the li
           t_loadMbody = setTimeout(function() { theLi.click(); }, LOAD_DELAY);
         }
       }else {
@@ -218,15 +218,15 @@ var occPopup   = function() {
   }
 
   /**
-  * 载入邮件正文预览
+  * 载入邮件正文预览 - Loading the body of the message preview
   */
   function loadMbody(theLi) {
-    var index = theLi.attr('data-index'),
-    id = theLi.children('a').attr('data-id'),
-    id_e = encodeURIComponent(id),
-    mbody = theLi.find('.mail-body'),
+    var index  = theLi.attr('data-index'),
+    id         = theLi.children('a').attr('data-id'),
+    id_e       = encodeURIComponent(id),
+    mbody      = theLi.find('.mail-body'),
     single_url = URL_SINGLE + id_e;
-    reply_url = URL_REPLY + id_e;
+    reply_url  = URL_REPLY  + id_e;
     $.ajax({
       url: single_url,
       cache: true,
@@ -242,8 +242,8 @@ var occPopup   = function() {
           theLi.addClass('loaded');
 
           var text = $(bdy).text().replace('<', '&lt;').replace('>', '&gt;'),
-          btnOpen = ['<a href="', single_url, '" class="mbtn open">', _L_open, '</a>'].join(''),
-          btnReply = ['<a href="', reply_url, '" class="mbtn reply">', _L_reply, '</a>'].join('');
+          btnOpen  = ['<a href="', single_url, '" class="mbtn open">' , _L_open,  '</a>'].join(''),
+          btnReply = ['<a href="', reply_url,  '" class="mbtn reply">', _L_reply, '</a>'].join('');
 
           if (text.length > 300) text = text.slice(0, 286) + '...';
 
@@ -255,7 +255,7 @@ var occPopup   = function() {
             $res.find('input[name=hidcmdpst]').val('Del');
             var data = $res.serialize();
             $.ajax({
-              url: HOME_URL + '?ae=PreFormAction&t=IPM.Note&a=Del',
+              url:  HOME_URL + '?ae=PreFormAction&t=IPM.Note&a=Del',
               data: data,
               type: 'POST',
               success: function() {
@@ -284,7 +284,7 @@ var occPopup   = function() {
   }
 
   /**
-  * 标记条目为已读，更新未读条目数
+  * 标记条目为已读，更新未读条目数 - Mark entries as read, and update the unread number of entries
   */
   function markRead(theLi) {
     if (!theLi.hasClass('loaded')) return;
@@ -306,7 +306,7 @@ var occPopup   = function() {
   }
 
   //-------------------PAGER------------------------------------------------------------
-  function insertNext() { //插入下一页按钮
+  function insertNext() { //插入下一页按钮 - Insert the Next button
     $('<div id="next" class="btn" title="' + _L_tip_readMore + '">...</div>').appendTo('#digests').click(function() {
       tclear(t_loadMbody);
       toNext();
@@ -323,18 +323,18 @@ var occPopup   = function() {
     }
 
     $('<ul class="mail-list">' + genLi() + '</ul>')
-    .css('display', 'none')
+    .css         ('display', 'none')
     .insertBefore('#next')
-    .slideDown(400, function() {
+    .slideDown   (400, function() {
       //assign();
       $(this).prev().slideUp(200, function() {
-        if (!hasPrev) insertPrev(); //如果没有上一页按钮
-        $(this).remove(); //移除上一页的ul节点
+        if (!hasPrev) insertPrev(); //如果没有上一页按钮 - If there is no back button
+        $(this).remove(); //移除上一页的ul节点 - Ul node to remove the previous page
       });
     });
   }
 
-  function insertPrev() { //插入上一页按钮
+  function insertPrev() { //插入上一页按钮 - Insert the Back button
     $('<div id="prev" class="btn" title="' + _L_tip_watchBack + '">...</div>')
     .css('display', 'none')
     .prependTo('#digests')
@@ -345,7 +345,7 @@ var occPopup   = function() {
     });
   }
 
-  function toPrev() { //转到上一页
+  function toPrev() { //转到上一页 - Go to previous page
     mIndex -= (liTotal + NUM_PERPAGE) - 1;
     $('<ul class="mail-list">' + genLi() + '</ul>')
     .css('display', 'none')
@@ -353,13 +353,13 @@ var occPopup   = function() {
     .slideDown(400, function() {
       //assign();
       $(this).next().slideUp(200, function() {
-        $(this).remove(); //移除下一页的ul节点
-        //重置下一页按钮
+        $(this).remove(); //移除下一页的ul节点 - Remove the ul node on the next page
+        //重置下一页按钮 - Reset the Next button
         if (isEnd) {
           $('#next').attr('title', _L_tip_readMore).html('...').css({background: '', cursor: ''});
           isEnd = false;
         }
-        //如果已经到顶，就移除上一页按钮
+        //如果已经到顶，就移除上一页按钮 - If you have the ceiling, remove the back button
         if (mIndex <= NUM_PERPAGE) {
           $('#prev').slideUp(100, function() {
             $(this).remove();
@@ -373,12 +373,12 @@ var occPopup   = function() {
 
 
   /*
-  * 开始
+  * 开始 - Start
   */
   function go() {
-    var ul = '<ul class="mail-list">' + genLi() + '</ul>',
+    var ul   = '<ul class="mail-list">' + genLi() + '</ul>',
     template = $('#template').html(),
-    html = template.replace(/\{(\w*)\}/g, function(holder, val) {
+    html     = template.replace(/\{(\w*)\}/g, function(holder, val) {
       return _LOCALE(val) || '';
     });
 
@@ -400,12 +400,12 @@ var occPopup   = function() {
 
 }();
 
-if (!NUM_UNRD) { //没有未读邮件
+if (!NUM_UNRD) { //没有未读邮件 - No unread messages
   OCC.openMail();
 }else {
-  window.onload = occPopup.go;
+  window.onload   = occPopup.go;
   window.onunload = function() {
-    //把已阅读条目的id记录到localStorage
+    //把已阅读条目的id记录到localStorage - read the entry id to localStorage
     localStorage.haveRead = JSON.stringify(occPopup.haveRead);
   };
 }
