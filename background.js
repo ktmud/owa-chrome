@@ -12,13 +12,13 @@ var HOME_URL = URL = localStorage.owaHome;
 var SYNC_URL = HOME_URL + _URL_SYNC;
 
 var initialize = function() {
-  //默认配置
-  localStorage.doNotify = true;      // 是否显示桌面通知
-  localStorage.noDupNotify = true;      // 已忽略过的邮件就不再提醒
-  localStorage.frequency = 10;        // 检查新邮件周期，单位为分钟
-  localStorage.notifyTime = 6;       // 新邮件桌面通知显示时间，单位为秒
+  //默认配置 Default configuration
+  localStorage.doNotify = true;      // 是否显示桌面通知 Whether to show desktop notification
+  localStorage.noDupNotify = true;      // 已忽略过的邮件就不再提醒 Don't notify for notified messages
+  localStorage.frequency = 10;        // 检查新邮件周期，单位为分钟 minutes
+  localStorage.notifyTime = 6;       // 新邮件桌面通知显示时间，单位为秒 seconds
   localStorage.previewNum = 10;       // popup窗口显示的预览条数
-  localStorage.popLogin = true;      // 默认在未登录时弹出登录窗口
+  localStorage.popLogin = true;      // 默认在未登录时弹出登录窗口 Popup login window if not logined
   localStorage.doNotifyLogin = true;       // 未登录时弹出提醒
   localStorage.doNum = false;        //是否始终在预览窗口显示邮件序号
   localStorage.username = '';
